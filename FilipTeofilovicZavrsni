@@ -1,0 +1,93 @@
+//PRVI JS ZADATAK
+var array = [15, "dzordan", "kob3"];
+console.log (array)
+
+array.push(9);
+console.log (array)
+
+array.splice(0,1);
+console.log (array)
+
+array.splice(-1);
+console.log(array)
+
+
+
+
+
+
+//DRUGI JS ZADATAK
+var object = {
+    gde: "VivifyAcademy",
+    sta: "Zavrsni rad",
+    ko: "Menu ekipa"
+}
+
+console.log("Objekat pre dodavanja novog property-ja: ", object);
+object.kada = "02.02.2023";
+console.log("Objekat nakon dodavanja novog propretyja: ", object);
+
+
+
+
+
+//TRECI JS ZADATAK
+var complexArray = [
+    'nizovima',
+    {
+        key1: 'pristupamo',
+        key2: 'ispisati',
+        nizUnutarObjekta: ['vezbamo', 'cuvamo']
+    },
+    {
+        key1: 'objektima',
+        key2: 'podacima'
+    },
+    'nacin'
+];
+   console.log("Zadatak u kojem "
+        +complexArray[1].nizUnutarObjekta[0]+ " kako da "
+        +complexArray[1].key1+ " podacima sacuvanim u " 
+        +complexArray[0]+" i "
+        +complexArray[2].key1+". Na ovaj "
+        +complexArray[3]+ " omogucavamo da odredjeni string mozemo "
+        +complexArray[1].key2+ " sa razlicitim "
+        +complexArray[2].key2+", u zavisnosti koje vrednosti "
+        +complexArray[1].nizUnutarObjekta[1]+" u nizu i/ili objektu.")
+
+
+
+
+
+//CETVRTI JS ZADATAK
+var count3 = 0;
+var count5 = 0;
+
+for (var i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+        count3++
+        count5++
+        console.log("Broj " + i + ": FizzBuzz");
+    } else if (i % 3 === 0) {
+        count3++
+        console.log("Broj " + i + ": Fizz");
+    } else if (i % 5 === 0) {
+        count5++
+        console.log("Broj " + i + ": Buzz")
+    };
+};
+
+
+//PETI JS ZADATAK
+var sum;
+var arrNum = [2, 5, 9, 7]
+
+function sumOfArray(arrNum) {
+var sum = 0;
+    for (var clan of arrNum) {
+            sum += clan;
+};
+return sum;
+};
+var result = sumOfArray(arrNum);
+console.log(result);
