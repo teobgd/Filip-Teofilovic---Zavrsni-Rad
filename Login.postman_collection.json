@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "b9dc6a7b-09a4-4e3d-8951-c65a1898e9a4",
+		"name": "Login",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14737471"
+	},
+	"item": [
+		{
+			"name": "Login sa validnim kredencijalima",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create Gallery",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Get gallery ID\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var galleryID = jsonData.id;",
+							"    pm.environment.set('lastCreatedGalleryID', galleryID);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Filip\",\n    \"description\": \"rererere\",\n    \"images\": [\n        \"https://cdn.tasteatlas.com/images/dishes/38306f0cf7c24c539d022b5ce8c5e1e1.jpg?mw=1300\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/galleries",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"galleries"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
